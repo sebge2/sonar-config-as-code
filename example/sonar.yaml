@@ -1,0 +1,19 @@
+groups:
+  - name: sonar-analysers
+    description: Any analyzer tools
+    permissions:
+      - codeviewer
+      - scan
+      - user
+users:
+  - name: jenkins
+    login: jenkins
+    password: toto
+    groups:
+      - sonar-analysers
+  - name: admin
+    login: admin
+    password: {ADMIN_PASSWORD}
+properties:
+  - name: sonar.branch.longLivedBranches.regex
+    value: (branch|release|develop|master).*
