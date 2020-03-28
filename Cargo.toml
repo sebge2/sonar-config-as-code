@@ -1,0 +1,32 @@
+[package]
+name = "sonar-as-code"
+version="0.0.1"
+authors = [ "Sebastien Gerard <me@sgerard.be>" ]
+description = "Tool configuration SonarQube from a configuration file."
+license = "Apache-2.0"
+homepage = "https://github.com/sebge2/sonar-config-as-code"
+repository="https://github.com/sebge2/sonar-config-as-code"
+keywords = ["cli", "sonarQube"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+clap = "2.33.0"
+clap-verbosity-flag = "0.3.1"
+log = "0.4"
+structopt = "0.3.11"
+serde = "1.0"
+serde_yaml = "0.8.7"
+serde_derive = "1.0.105"
+reqwest = { version = "0.10", features = ["blocking", "json"] }
+retry="1.0.0"
+envsubst="0.2.0"
+
+[[bin]]
+name = "sonar-as-code"
+path = "src/main.rs"
+
+
+[package.metadata.release]
+sign-commit = true
+upload-doc = true
+pre-release-commit-message = "Release {{version}}"
